@@ -1,27 +1,23 @@
-  let playerScore = 0
-  let computerScore = 0
-  let roundWinner = ""
+let playerScore = 0
+let computerScore = 0
+let roundWinner = ""
 
 
+function getComputerChoice(weapon) {
+
+    // get random index value
+    const randomIndex = Math.floor(Math.random() * weapon.length);
+
+    // get random item
+    const item = weapon[randomIndex];
+
+    return item;
+
+}
+
+const weapon = ["ROCK", "PAPER", "SCISSORS"];
 
 
-
-  
-    function getComputerChoice(weapon) {
-
-        // get random index value
-        const randomIndex = Math.floor(Math.random() * weapon.length);
-    
-        // get random item
-        const item = weapon[randomIndex];
-
-        return item;
-        
-    }
-
-    const weapon = ["ROCK", "PAPER", "SCISSORS"];
-
-        
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -29,13 +25,13 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (
-    (playerSelection === 'ROCK' && computerSelection === "SCISSORS") ||
-    (playerSelection === 'PAPER' && computerSelection === "ROCK") ||
-    (playerSelection === 'SCISSORS' && computerSelection === "PAPER")
+        (playerSelection === 'ROCK' && computerSelection === "SCISSORS") ||
+        (playerSelection === 'PAPER' && computerSelection === "ROCK") ||
+        (playerSelection === 'SCISSORS' && computerSelection === "PAPER")
     ) {
 
-    playerScore++
-    roundWinner = "player"
+        playerScore++
+        roundWinner = "player"
     }
     if (
         (computerSelection === 'ROCK' && playerSelection === "SCISSORS") ||
@@ -51,17 +47,17 @@ function playRound(playerSelection, computerSelection) {
 function game() {
 
 
- 
-    for (let i = 0; i < 10; i++){
-    let playerSelection = prompt("Choose your weapon").toUpperCase()
-    const computerSelection = getComputerChoice(weapon);
 
-        
-playRound(playerSelection, computerSelection)
-console.log("Your choice is" + "\n" + playerSelection)
-console.log("Computer's choice is" + "\n" + computerSelection)
-console.log("Winner:" + "\n" + roundWinner)
-}
+    for (let i = 0; i < 10; i++) {
+        let playerSelection = prompt("Choose your weapon").toUpperCase()
+        const computerSelection = getComputerChoice(weapon);
+
+
+        playRound(playerSelection, computerSelection)
+        console.log("Your choice is" + "\n" + playerSelection)
+        console.log("Computer's choice is" + "\n" + computerSelection)
+        console.log("Winner:" + "\n" + roundWinner)
+    }
 }
 // game()
 
