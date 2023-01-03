@@ -46,9 +46,9 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
 
+    let continueGame = true
 
-
-    for (let i = 0; i < 10; i++) {
+    while (continueGame) {
         let playerSelection = prompt("Choose your weapon").toUpperCase()
         const computerSelection = getComputerChoice(weapon);
 
@@ -57,9 +57,13 @@ function game() {
         console.log("Your choice is" + "\n" + playerSelection)
         console.log("Computer's choice is" + "\n" + computerSelection)
         console.log("Winner:" + "\n" + roundWinner)
+        if (playerScore === 5 || computerScore === 5)
+            continueGame = false;
     }
 }
-// game()
+
+
+
 
 
 console.log(game())
