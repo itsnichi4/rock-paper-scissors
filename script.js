@@ -59,14 +59,30 @@ function game() {
         console.log("Winner:" + "\n" + roundWinner)
         if (playerScore === 5 || computerScore === 5)
             continueGame = false;
+            
+        console.log("Player score is: " + playerScore);
+        console.log("Computer score is: " + computerScore)
+        
     }
+
+}
+
+function gameWinner() {
+
+    if (playerScore === 5) {
+    console.log("Player has won the game!")
+    }
+    if (computerScore === 5) {
+        console.log("Computer has won the game!");
+    }
+
+
 }
 
 
 
+game()
 
 
-console.log(game())
 
-console.log(playerScore);
-console.log(computerScore)
+gameWinner()
